@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleg LGBT - Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <!-- Шапка -->
+    <div class="header">
+        <div class="model-selector">
+            <button class="model-btn active" data-model="funny">🍺 Олег</button>
+            <button class="model-btn" data-model="indian">🇮🇳 Nikiti</button>
+            <button class="model-btn" data-model="investor">💰 Инвестор</button>
+            <button class="model-btn" data-model="image">🌈 Басов</button>
+        </div>
+        <button class="settings-btn" id="settingsBtn">⚙️</button>
+    </div>
+
+    <!-- Основной чат -->
+    <div class="chat-container" id="chatContainer">
+        <div class="messages" id="messages">
+            <!-- Приветственное сообщение -->
+            <div class="message bot">
+                <div class="avatar">🤖</div>
+                <div class="bubble">
+                    Привет, я Олег! Напиши мне что-нибудь или поставь : в начале для размышления 🧠
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Панель ввода -->
+    <div class="input-panel">
+        <div class="input-wrapper">
+            <input type="text" id="messageInput" placeholder="Напиши сообщение..." autocomplete="off">
+            <button class="thinking-btn" id="thinkingBtn" title="Режим размышления">🧠</button>
+            <button class="send-btn" id="sendBtn">➡️</button>
+        </div>
+        <div class="features">
+            <span class="feature" id="memoryBtn">💭 Память</span>
+            <span class="feature" id="clearBtn">🗑️ Очистить</span>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно настроек -->
+<div class="modal" id="settingsModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>⚙️ Настройки</h3>
+            <button class="close-btn" id="closeSettings">✖️</button>
+        </div>
+        <div class="modal-body">
+            <div class="setting-item">
+                <label>⏱️ Таймер</label>
+                <label class="switch">
+                    <input type="checkbox" id="timerToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>💭 Память по умолчанию</label>
+                <label class="switch">
+                    <input type="checkbox" id="memoryToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>🎨 Тема</label>
+                <select id="themeSelect">
+                    <option value="dark">Тёмная</option>
+                    <option value="light">Светлая</option>
+                    <option value="auto">Как в Telegram</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
